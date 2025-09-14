@@ -1,0 +1,12 @@
+services:
+  client:
+    build: ./client
+    ports:
+      - "5005:5005"
+    volumes:
+      - .:/src
+  server:
+    build: ./server
+    ports:
+      - "3005:3005"
+    command: npm run start
