@@ -1,18 +1,22 @@
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import './App.css'
-import {useEffect, useState} from "react";
+import Navbar from "./components/Navbar/Navbar.tsx";
+import {CssBaseline} from "@mui/material";
+import {Dashboard} from "./components/Dashboard/Dashboard.tsx";
+import {useSharedData} from "./hooks/useSharedData.tsx";
 
 function App() {
-    const [transfomers, setTransfomers] = useState([])
+    const data = useSharedData([]);
 
-    useEffect(() => {
-        fetch("http://localhost:3005/transformers")
-            .then((res) => res.json())
-            .then(transfomers => setTransfomers(transfomers))
-    }, [])
-    console.log(transfomers)
     return (
         <>
-            Hello this is my first React App with Vite!
+            <CssBaseline/>
+            <Navbar/>
+            <Dashboard data={data}/>
         </>
     )
 }
