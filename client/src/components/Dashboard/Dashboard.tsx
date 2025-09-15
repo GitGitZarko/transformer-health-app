@@ -21,7 +21,7 @@ type DashboardProps = {
 export const Dashboard = ({data}: DashboardProps) => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-    console.log({data})
+
     return (
         <Grid container spacing={2} columns={16}>
             <Grid size={isMobile ? 16 : 8}>

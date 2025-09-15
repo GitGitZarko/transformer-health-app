@@ -9,7 +9,7 @@ import {
     Tooltip,
     ResponsiveContainer,
 } from 'recharts';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 type ChartProps = {
     data: ResponseData[];
@@ -25,7 +25,13 @@ type CombinedDataEntry = {
 const Chart = ({data}: ChartProps) => {
 
     const [selected, setSelected] = useState<number[]>(data.map(d => d.assetId));
-    console.log(data);
+
+    useEffect(() => {
+        if (data.length > 0) {
+            setSelected(data.map(d => d.assetId));
+        }
+    }, [data]);
+
     // Unique timestamps
     const allTimestamps = Array.from(
         new Set(data.flatMap(d => d.lastTenVoltgageReadings.map(r => r.timestamp)))
