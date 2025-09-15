@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 
-const STORAGE_KEY = 'my-shared-api-data';
+const STORAGE_KEY = 'shared-api-data';
 const URL = "http://localhost:3005/transformers";
 
 // The Component which grabs the data from the API and store it into localstorage

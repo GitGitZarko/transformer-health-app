@@ -29,7 +29,7 @@ export default function DataTable({data}: DashboardProps) {
     )
 
     return (
-        <Paper sx={{padding: 2, margin: 10}}>
+        <Paper sx={{padding: 2, margin: 5}}>
             <TextField
                 label="Search by name, region or health..."
                 variant="outlined"
@@ -42,7 +42,7 @@ export default function DataTable({data}: DashboardProps) {
                 <Table>
                     <TableHead sx={{backgroundColor: '#f5f5f5'}}>
                         <TableRow>
-                            {columns.map((item) => (<TableCell>{item}</TableCell>))}
+                            {columns.map((item) => (<TableCell key={item}>{item}</TableCell>))}
                         </TableRow>
                     </TableHead>
                     <TableBody>

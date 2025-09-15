@@ -28,7 +28,7 @@ export const Dashboard = ({data}: DashboardProps) => {
                 <Box><DataTable data={data}/></Box>
             </Grid>
             <Grid size={isMobile ? 16 : 8}>
-                <Box><Chart /></Box>
+                <Box><Chart data={data}/></Box>
             </Grid>
         </Grid>
     );
