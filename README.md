@@ -67,13 +67,13 @@ docker-compose up --build
 ```bash
 cd server
 docker build -t voltage-server .
-docker run -p 3001:3001 voltage-server
+docker run -p 3005:3005 voltage-server
 ```
 
 ```bash
 cd client
 docker build -t voltage-client .
-docker run -p 5173:5173 voltage-client
+docker run -p 5005:5005 voltage-client
 ```
 
 
